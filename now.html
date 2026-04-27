@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Now | Christian Keroles</title>
+<meta name="description" content="What Christian Keroles is working on right now — current projects, focus areas, and what's next."/>
+<link rel="canonical" href="https://christiankeroles.com/now.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,800;1,300;1,800&family=Barlow:wght@300;400&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 44'%3E%3Cpath fill-rule='evenodd' d='M 15 21 C 7 21, 5 16, 5 11 C 5 5, 9 2, 15 2 C 21 2, 25 5, 25 11 C 25 16, 23 21, 15 21 Z M 15 19 C 9 19, 8 15, 8 11 C 8 6, 11 4, 15 4 C 19 4, 22 6, 22 11 C 22 15, 21 19, 15 19 Z' fill='%2300e040'/%3E%3Crect x='2' y='20' width='26' height='4' rx='1.5' fill='%2300e040'/%3E%3Crect x='12.5' y='23' width='5' height='18' rx='1.5' fill='%2300e040'/%3E%3C/svg%3E"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--black:#050505;--green:#00e040;--green-dim:#00c034;--white:#f0f0ee;--gray:#999994;--gray-dim:#333330;--rule:#1f1f1c;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.04) 2px,rgba(0,0,0,0.04) 4px);pointer-events:none;z-index:9999;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 56px;height:64px;background:rgba(5,5,5,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);}
+  .nav-logo-text span{color:var(--green);}
+  .nav-divider{width:1px;height:20px;background:var(--gray-dim);}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.15s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--green);}
+  .nav-cta{color:var(--black)!important;background:var(--green);padding:8px 20px;font-weight:600!important;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);}
+  .page-header{padding:120px 56px 64px;max-width:900px;margin:0 auto;border-bottom:1px solid var(--rule);}
+  .page-header-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+  .page-header-label::before{content:'';width:24px;height:1px;background:var(--green);}
+  .page-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,7vw,96px);font-weight:800;text-transform:uppercase;line-height:0.9;color:var(--white);}
+  .page-header h1 em{font-style:italic;font-weight:300;color:#aaaaaa;display:block;}
+  .updated{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-top:16px;}
+  .now-content{max-width:900px;margin:0 auto;padding:80px 56px 100px;}
+  .now-item{margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--rule);}
+  .now-item:last-child{border-bottom:none;}
+  .now-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .now-label::before{content:'';width:16px;height:1px;background:var(--green);}
+  .now-title{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:16px;letter-spacing:0.01em;}
+  .now-body{font-size:17px;font-weight:300;color:var(--gray);line-height:1.8;max-width:680px;}
+  .now-body p{margin-bottom:14px;}
+  footer{border-top:1px solid var(--rule);padding:40px 56px;}
+  .footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+  .footer-copy{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gray);}
+  .footer-links{display:flex;gap:28px;}
+  .footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.15s;}
+  .footer-links a:hover{color:var(--green);}
+  @media(max-width:760px){nav{padding:0 24px;}.page-header,.now-content{padding-left:24px;padding-right:24px;}footer{padding:32px 24px;}.footer-inner{flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-logo-text">CK<span>.</span></span>
+    <span class="nav-divider"></span>
+    <svg width="15" height="22" viewBox="0 0 30 44" fill="none"><path fill-rule="evenodd" d="M 15 21 C 7 21, 5 16, 5 11 C 5 5, 9 2, 15 2 C 21 2, 25 5, 25 11 C 25 16, 23 21, 15 21 Z M 15 19 C 9 19, 8 15, 8 11 C 8 6, 11 4, 15 4 C 19 4, 22 6, 22 11 C 22 15, 21 19, 15 19 Z" fill="#00e040"/><rect x="2" y="20" width="26" height="4" rx="1.5" fill="#00e040"/><rect x="12.5" y="23" width="5" height="18" rx="1.5" fill="#00e040"/></svg>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="index.html#writing">Writing</a>
+    <a href="index.html#interviews">Interviews</a>
+    <a href="now.html" class="active">Now</a>
+    <a class="nav-cta" href="index.html#book">Get Notified</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-label">Christian Keroles</p>
+  <h1>What I'm<br/><em>Doing Now.</em></h1>
+  <p class="updated">Last updated: April 2026</p>
+</div>
+
+<div class="now-content">
+
+  <div class="now-item">
+    <p class="now-label">Day Job</p>
+    <p class="now-title">Human Rights Foundation</p>
+    <div class="now-body">
+      <p>Serving as Senior Director of Operations at the Human Rights Foundation, leading capacity building, finance, and events. I'm the executive producer of the Oslo Freedom Forum — one of the world's most important gatherings for human rights defenders and dissidents.</p>
+      <p>In 2024, I co-founded the <a href="https://finneyfreedomprize.org" target="_blank" style="color:var(--green);">Finney Freedom Prize</a> — an award honoring individuals who advance financial freedom and human rights through Bitcoin, named after the legendary cryptographer Hal Finney.</p>
+      <p>The through-line between Bitcoin and human rights has never been clearer to me. Freedom of money is a prerequisite for freedom of everything else.</p>
+    </div>
+  </div>
+
+  <div class="now-item">
+    <p class="now-label">Writing</p>
+    <p class="now-title">How to Think About Bitcoin</p>
+    <div class="now-body">
+      <p>Working on my first book — a first-principles framework for understanding Bitcoin. Not a price prediction. Not a technical manual. A guide for anyone who wants to actually hold a clear mental model of what Bitcoin is and why it matters, even as the noise gets louder.</p>
+      <p>If you want to know when it's ready, <a href="index.html#book" style="color:var(--green)">get on the list</a>.</p>
+    </div>
+  </div>
+
+  <div class="now-item">
+    <p class="now-label">Building</p>
+    <p class="now-title">Demand Response Startup</p>
+    <div class="now-body">
+      <p>Quietly building at the intersection of energy markets and decentralized coordination. The demand response industry is broken and ripe for disruption. More details coming soon.</p>
+    </div>
+  </div>
+
+  <div class="now-item">
+    <p class="now-label">Operating Principle</p>
+    <p class="now-title">"The key to life is to know nothing."</p>
+    <div class="now-body">
+      <p>The more you think you know, the less room you have to learn anything real. Stay curious. Stay humble. Build.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2025 Christian Keroles</p>
+    <div class="footer-links">
+      <a href="https://x.com/ck_SNARKs" target="_blank">X</a>
+      <a href="https://www.linkedin.com/in/ckeroles/" target="_blank">LinkedIn</a>
+      <a href="https://primal.net/ck" target="_blank">Nostr</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
