@@ -27,7 +27,7 @@
   body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px); pointer-events: none; z-index: 9999; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; height: 64px; background: rgba(5,5,5,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 10001; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; height: 64px; background: rgba(5,5,5,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
   .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
   .nav-logo-text { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); line-height: 1; }
   .nav-logo-text span { color: var(--green); }
@@ -46,12 +46,12 @@
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* Mobile drawer */
-  .nav-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 199; background: rgba(5,5,5,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); padding: 24px 24px 32px; flex-direction: column; gap: 0; transform: translateY(-8px); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; pointer-events: none; }
-  .nav-drawer.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-  .nav-drawer a { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color 0.15s; }
-  .nav-drawer a:hover { color: var(--green); }
-  .nav-drawer a:last-child { border-bottom: none; }
-  .nav-drawer .drawer-cta { margin-top: 20px; color: var(--black) !important; background: var(--green); padding: 14px 24px; font-weight: 800; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); text-align: center; border-bottom: none !important; }
+  .nav-overlay { position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 10000; background: var(--black); display: flex; flex-direction: column; padding: 24px 24px 40px; opacity: 0; pointer-events: none; transform: translateY(-100%); transition: transform 0.3s ease, opacity 0.3s ease; overflow-y: auto; }
+  .nav-overlay.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .nav-overlay-links { display: flex; flex-direction: column; margin-top: 32px; }
+  .nav-overlay-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); text-decoration: none; padding: 20px 0; border-bottom: 1px solid var(--rule); transition: color 0.15s; }
+  .nav-overlay-links a:hover { color: var(--green); }
+  .nav-overlay-links .overlay-cta { margin-top: 28px; color: var(--black); background: var(--green); padding: 18px 24px; font-weight: 800; text-align: center; border-bottom: none; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
 
   /* HERO */
   .hero { min-height: 100vh; padding: 0 56px; padding-top: 64px; display: grid; grid-template-columns: 1fr 440px; align-items: center; gap: 0; max-width: 1300px; margin: 0 auto; position: relative; }
@@ -212,7 +212,6 @@
     nav { padding: 0 32px; }
     .nav-hamburger { display: flex; }
     .nav-links { display: none; }
-    .nav-drawer { display: flex; }
     .hero { grid-template-columns: 1fr; padding: 80px 32px 60px; min-height: unset; gap: 0; }
     .hero::after { display: none; }
     .hero-text { padding-left: 0; }
@@ -297,15 +296,17 @@
   </button>
 </nav>
 
-<!-- Mobile drawer -->
-<nav class="nav-drawer" id="nav-drawer" aria-hidden="true" inert>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="work.html" onclick="closeMenu()">Work</a>
-  <a href="#writing" onclick="closeMenu()">Writing</a>
-  <a href="#interviews" onclick="closeMenu()">Interviews</a>
-  <a href="#book" onclick="closeMenu()">Book</a>
-  <a href="#book" class="drawer-cta" onclick="closeMenu()">Get Notified</a>
-</nav>
+<!-- Mobile full-screen menu overlay (sits below the top nav bar) -->
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true" inert>
+  <nav class="nav-overlay-links">
+    <a href="#about">About</a>
+    <a href="work.html">Work</a>
+    <a href="#writing">Writing</a>
+    <a href="#interviews">Interviews</a>
+    <a href="#book">Book</a>
+    <a href="#book" class="overlay-cta">Get Notified</a>
+  </nav>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -634,31 +635,19 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const hamburger = document.getElementById('hamburger');
-  const drawer = document.getElementById('nav-drawer');
-
-  hamburger.addEventListener('click', () => {
-    const isOpen = drawer.classList.contains('open');
-    isOpen ? closeMenu() : openMenu();
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
+  document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.getElementById('hamburger');
+    var overlay = document.getElementById('nav-overlay');
+    if (!hamburger || !overlay) return;
+    hamburger.removeAttribute('onclick');
+    function openMenu(){overlay.classList.add('open');hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');hamburger.setAttribute('aria-label','Close menu');overlay.setAttribute('aria-hidden','false');overlay.removeAttribute('inert');document.body.style.overflow='hidden';}
+    function closeMenu(){overlay.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');hamburger.setAttribute('aria-label','Open menu');overlay.setAttribute('aria-hidden','true');overlay.setAttribute('inert','');document.body.style.overflow='';}
+    window.openMenu=openMenu;window.closeMenu=closeMenu;
+    hamburger.addEventListener('click',function(e){e.stopPropagation();overlay.classList.contains('open')?closeMenu():openMenu();});
+    overlay.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
   });
-
-  function openMenu() {
-    drawer.classList.add('open');
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-label', 'Close menu');
-    drawer.setAttribute('aria-hidden', 'false');
-    drawer.removeAttribute('inert');
-  }
-
-  function closeMenu() {
-    drawer.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-label', 'Open menu');
-    drawer.setAttribute('aria-hidden', 'true');
-    drawer.setAttribute('inert', '');
-  }
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !drawer.contains(e.target)) closeMenu
+</script>
+</body>
+</html>
