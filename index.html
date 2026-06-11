@@ -12,7 +12,6 @@
 <meta name="twitter:site" content="@ck_SNARKs"/>
 <meta name="twitter:title" content="Christian Keroles"/>
 <meta name="twitter:description" content="Startup executive. Builder. Operator. Know nothing."/>
-<link rel="preload" as="image" href="CK_Headshot.jpg" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,800;1,300;1,800&family=Barlow:wght@300;400&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 44'%3E%3Cpath fill-rule='evenodd' d='M 15 21 C 7 21, 5 16, 5 11 C 5 5, 9 2, 15 2 C 21 2, 25 5, 25 11 C 25 16, 23 21, 15 21 Z M 15 19 C 9 19, 8 15, 8 11 C 8 6, 11 4, 15 4 C 19 4, 22 6, 22 11 C 22 15, 21 19, 15 19 Z' fill='%2300e040'/%3E%3Crect x='2' y='20' width='26' height='4' rx='1.5' fill='%2300e040'/%3E%3Crect x='12.5' y='23' width='5' height='18' rx='1.5' fill='%2300e040'/%3E%3C/svg%3E"/>
@@ -21,7 +20,7 @@
   :root {
     --black: #050505; --black-2: #0d0d0d; --black-3: #151515; --black-4: #1e1e1e;
     --green: #00e040; --green-dim: #00c034; --green-glow-hard: rgba(0,224,64,0.35);
-    --white: #f0f0ee; --gray: #b5b5b0; --gray-dim: #333330; --rule: #1f1f1c;
+    --white: #f0f0ee; --gray: #999994; --gray-dim: #333330; --rule: #1f1f1c;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Barlow', sans-serif; background: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
@@ -40,7 +39,7 @@
   .nav-cta:hover { background: var(--green-dim) !important; color: var(--black) !important; }
 
   /* Hamburger — hidden on desktop */
-  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; position: relative; z-index: 300; }
   .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; transform-origin: center; }
   .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-hamburger.open span:nth-child(2) { opacity: 0; }
@@ -412,7 +411,7 @@
     <div class="interview-grid">
       <a class="interview-card" href="https://www.youtube.com/watch?v=y_58Qib-Q8I" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/y_58Qib-Q8I/mqdefault.jpg" alt="Swan Signal Live E10: Hyperbitcoinization with Bitcoin TINA" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/y_58Qib-Q8I/mqdefault.jpg" alt="Swan Signal Live E10: Hyperbitcoinization with Bitcoin TINA" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -431,7 +430,7 @@
     <div class="interview-grid">
       <a class="interview-card" href="https://www.youtube.com/watch?v=Kq0O3oS_lxk" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/Kq0O3oS_lxk/mqdefault.jpg" alt="What Bitcoin Did: Bitcoin & The Sovereign Company" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/Kq0O3oS_lxk/mqdefault.jpg" alt="What Bitcoin Did: Bitcoin & The Sovereign Company" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -441,7 +440,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=VE0_dC_mLZo" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/VE0_dC_mLZo/mqdefault.jpg" alt="Swan Signal Live E58: The Past, Present, and Future of Bitcoin" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/VE0_dC_mLZo/mqdefault.jpg" alt="Swan Signal Live E58: The Past, Present, and Future of Bitcoin" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -460,7 +459,7 @@
     <div class="interview-grid">
       <a class="interview-card" href="https://www.youtube.com/watch?v=kS7RUe4A_5o" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/kS7RUe4A_5o/mqdefault.jpg" alt="What Bitcoin Did: Hyperbitcoinization as a Zero-Sum Game" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/kS7RUe4A_5o/mqdefault.jpg" alt="What Bitcoin Did: Hyperbitcoinization as a Zero-Sum Game" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -470,7 +469,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=ObXWDUU58T0" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/ObXWDUU58T0/mqdefault.jpg" alt="Bitrefill To The Moon: From Software Sales to Bitcoin Magazine" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/ObXWDUU58T0/mqdefault.jpg" alt="Bitrefill To The Moon: From Software Sales to Bitcoin Magazine" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -480,7 +479,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=RHMdS3UPMGs" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/RHMdS3UPMGs/mqdefault.jpg" alt="Coin Stories with Natalie Brunell: The Philosophy of CK" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/RHMdS3UPMGs/mqdefault.jpg" alt="Coin Stories with Natalie Brunell: The Philosophy of CK" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -490,7 +489,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=3Q1j_q8wwQM" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/3Q1j_q8wwQM/mqdefault.jpg" alt="Layer Zero: POV Crypto Reunites with Christian Keroles" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/3Q1j_q8wwQM/mqdefault.jpg" alt="Layer Zero: POV Crypto Reunites with Christian Keroles" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -509,7 +508,7 @@
     <div class="interview-grid">
       <a class="interview-card" href="https://www.youtube.com/watch?v=_6PvTUqyRt8" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/_6PvTUqyRt8/mqdefault.jpg" alt="Backstage with Alex Gladstein: Bitcoin for Human Rights" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/_6PvTUqyRt8/mqdefault.jpg" alt="Backstage with Alex Gladstein: Bitcoin for Human Rights" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -519,7 +518,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=oPIsGbBtmgE" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/oPIsGbBtmgE/mqdefault.jpg" alt="Stephan Livera Podcast #549: Is Everything Good For Bitcoin?" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/oPIsGbBtmgE/mqdefault.jpg" alt="Stephan Livera Podcast #549: Is Everything Good For Bitcoin?" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -529,7 +528,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=t2zXEgqZIsM" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/t2zXEgqZIsM/mqdefault.jpg" alt="Swan Signal Live EP 163: How Bitcoin Defends Human Rights" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/t2zXEgqZIsM/mqdefault.jpg" alt="Swan Signal Live EP 163: How Bitcoin Defends Human Rights" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -539,7 +538,7 @@
       </a>
       <a class="interview-card" href="https://www.youtube.com/watch?v=Ezz_qy6Swsw" target="_blank" rel="noopener">
         <div class="interview-thumb-wrap">
-          <img class="interview-thumb" src="https://img.youtube.com/vi/Ezz_qy6Swsw/mqdefault.jpg" alt="What Bitcoin Did: A New Mental Framework for Global Adoption" width="320" height="180" loading="lazy"/>
+          <img class="interview-thumb" src="https://img.youtube.com/vi/Ezz_qy6Swsw/mqdefault.jpg" alt="What Bitcoin Did: A New Mental Framework for Global Adoption" loading="lazy"/>
           <div class="interview-play"><div class="interview-play-icon"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1.5L12 8L2 14.5V1.5Z" fill="#050505"/></svg></div></div>
         </div>
         <div class="interview-card-body">
@@ -562,7 +561,7 @@
     <div>
       <p class="book-eyebrow">Work in Progress — 2025</p>
       <h2 class="book-title">How to Think<br/>About Bitcoin</h2>
-      <p class="book-desc">Not another price prediction. Not a technical manual. A first-principles framework for anyone who wants to actually understand what Bitcoin is, why it matters, and how to hold that understanding over time.</p>
+      <p class="book-desc">The culmination of years of <a href="#writing" style="color:var(--green);text-decoration:none;">writing about Bitcoin</a>. Not another price prediction. Not a technical manual. A first-principles framework for anyone who wants to actually understand what Bitcoin is, why it matters, and how to hold that understanding over time.</p>
       <!-- FORMSPREE: replace xbdqowyr with your actual Formspree form ID -->
       <form class="book-form" action="https://formspree.io/f/xbdqowyr" method="POST">
         <input type="email" name="email" placeholder="your@email.com" required/>
